@@ -1,3 +1,4 @@
+import React from 'react';
 import PropTypes from 'prop-types';
 import s from './ContactItem.module.css';
 
@@ -9,7 +10,7 @@ export default function ContactItem({ contact, onDelete }) {
       <button
         className={s.button}
         type="button"
-        onChange={() => onDelete(contact.id)}
+        onClick={() => onDelete(contact.id)}
       >
         Delete
       </button>

@@ -23,6 +23,13 @@ class App extends React.Component {
       number: data.number,
     };
 
+    if (
+      this.state.contacts.find(
+        contact => contact.name.toLowerCase() === newContact.name.toLowerCase(),
+      )
+    ) {
+      return alert(`${newContact.name} is already in contacts.`);
+    }
     this.setState(prevState => {
       return { contacts: [...prevState.contacts, newContact] };
     });
@@ -36,7 +43,6 @@ class App extends React.Component {
     this.setState(prevState => ({
       contacts: prevState.contacts.filter(contact => contact.id !== id),
     }));
-    console.log('3334');
   };
 
   render() {
